@@ -14,7 +14,7 @@ public class CharacterFrequency {
         if(s==null)
             return;
 
-        //Approach 1-using hashmap
+        //Approach 1-using hashmap; Time: O(n),Space: O(k) (k = number of distinct characters)
 //        Map<Character, Integer> map=new HashMap<>();
 //
 //        for(char c: s.toCharArray()){
@@ -26,7 +26,7 @@ public class CharacterFrequency {
 //        }
 
         //Approach 2-using array
-//        int[] arr=new int[26];
+//        int[] arr=new int[26]; Time: O(n), Space: O(1)
 //
 //        for(char c:s.toCharArray()){
 //            arr[c-'a']++;
@@ -37,7 +37,7 @@ public class CharacterFrequency {
 //            System.out.println((char)(i+'a')+", "+arr[i]);
 //        }
 
-        //Approach 3-using linkedhashmap - maintain insertion order
+        //Approach 3-using linkedhashmap - preserve insertion order; Time: O(n),Space: O(k) (k = number of distinct characters)
         Map<Character, Integer> map=new LinkedHashMap<>();
 
         for(char c: s.toCharArray()){

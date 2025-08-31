@@ -4,28 +4,29 @@ import leetcode.common.ListNode;
 
 public class LinkedListAddition {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode t1=l1;
-        ListNode t2=l2;
+//        https://leetcode.com/problems/add-two-numbers/description/
+//        Time: O(max(m, n)),Space: O(max(m, n))
+        ListNode t1=l1,t2=l2;
         ListNode res=new ListNode(-1);
-        ListNode curr=res;
+        ListNode cur=res;
         int rem=0;
 
-        while(t1!=null || t2!=null || rem==1){
-            int value=0;
+        while(t1!=null || t2!=null || rem!=0){
+            int val=0;
             if(t1!=null){
-                value+=t1.val;
+                val+=t1.val;
                 t1=t1.next;
             }
             if(t2!=null){
-                value+=t2.val;
+                val+=t2.val;
                 t2=t2.next;
             }
-            value+=rem;
-            rem=value/10;
-            curr.next=new ListNode(value%10);
-            curr=curr.next;
-        }
+            val+=rem;
+            rem=val/10;
+            cur.next=new ListNode(val%10);
+            cur=cur.next;
 
+        }
         return res.next;
     }
     public static void main(String[] args){
